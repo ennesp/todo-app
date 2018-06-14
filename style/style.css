@@ -1,0 +1,326 @@
+html, body{
+    padding: 0;
+    margin: 0;
+    min-height: 100%;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+h1,h2,h3,p,ul,li{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background: #314755; /* Old browsers */
+    background: -moz-linear-gradient(top, #314755 10%, #26a0da 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, #314755 10%,#26a0da 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, #314755 10%,#26a0da 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#314755', endColorstr='#26a0da',GradientType=0 ); /* IE6-9 */
+    font-family: 'Raleway', sans-serif;
+}
+
+.app-container{
+    text-align: center;
+    padding-top: 50px;
+    width: 95%;
+    max-width: 760px;
+    margin: 0 auto;
+}
+
+.title{
+    font-weight: 400;
+    color: #fff;
+    font-size: 36px;
+    letter-spacing: 1px;
+}
+
+.add-new-task{
+    margin-top: 40px;
+    position: relative;
+    display: inline-block;
+}
+
+.add-new-task input[type=text]{
+    width: 300px;
+    height: 40px;
+    padding: 0 15px;
+    padding-right: 45px;
+    font-size: 17px;
+    color: #314755;
+    font-family: 'Raleway', sans-serif;
+    letter-spacing: 0.8px;
+    border: 0;
+    border-radius: 20px;
+    vertical-align: middle;
+    outline: none;
+}
+
+.add-new-task button{
+    width: 45px;
+    height: 40px;
+    background-color: #fff;
+    color: #314755;
+    border: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-image: url(../img/plus-icon.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    text-indent: 1000px;
+    overflow: hidden;
+    background-size: 20px;
+    border-radius: 20px;
+    outline: none;
+    cursor: pointer;
+}
+
+.task-list{
+    min-height: 250px;
+    text-align: left;
+    list-style: none;
+    margin-top: 35px;
+    background-color: #fff;
+    padding: 30px 20px;
+    border-radius: 20px;
+    -webkit-box-shadow: 0 0px 50px 10px rgba(49, 71, 85, 0.7);
+    box-shadow: 0 0px 50px 10px rgba(49, 71, 85, 0.7);
+    margin-bottom: 35px;
+}
+
+.task-list li{
+    border-bottom: 1px solid rgba(49, 71, 85, 0.1);
+    padding: 10px 10px;
+}
+
+.task-list h3{
+    display: inline-block;
+    font-size: 22px;
+    height: 30px;
+    margin-bottom: 0;
+    font-weight: 400;
+    color: #314755;
+    margin: 5px 0;
+    margin-left: 15px;
+    transition: all 0.3s;
+
+    width: 80%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    vertical-align: middle;
+}
+
+.task-list .completed-task{
+    color: #9f9f9f;
+    text-decoration: line-through;
+}
+
+.task-list form{
+    margin-left: 15px;
+    display: inline-block;
+    width: 70%;
+}
+
+.task-list form input[type=text]{
+    height: 36px;
+    padding-left: 12px;
+    padding-right: 10px;
+    border: 1px solid rgba(49, 71, 85, 0.3);
+    border-radius: 12px;
+    box-shadow: none;
+    outline: none;
+    color: #314755;
+    font-size: 18px;
+    font-family: 'Raleway', sans-serif;
+    display: inline-block;
+    width: 100%;
+}
+
+.task-list form input[type=text]:focus{
+    border-color: rgba(49, 71, 85, 0.6);
+}
+
+.task-list li > label{
+    position: relative;
+    top: -20px;
+}
+
+.action-buttons{
+    float: right;
+}
+
+.action-buttons button{
+    background-color: #fff;
+    border: 0;
+    cursor: pointer;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+    outline: none;
+    font-family: 'Raleway', sans-serif;
+    transition: opacity 0.2s;
+}
+
+.action-buttons button:hover{opacity: 0.8;}
+
+.remove-task{
+    background-image: url(../img/delete-icon.png);
+    background-size: 18px;
+}
+
+.edit-task{
+    background-image: url(../img/edit-icon.png);
+    background-size: 20px;
+}
+
+.action-buttons .save-task{
+    color: #26a0da;
+    font-size: 14px;
+    width: auto;
+}
+
+.action-buttons .cancel-task{
+    color: #cb061d;
+    font-size: 14px;
+    width: auto;
+}
+
+.error{
+    margin-top: 25px;
+    border: 1px solid #a81414;
+    background-color: #edc6c6;
+    color: #a81414;
+    font-size: 16px;
+    display: inline-block;
+    padding: 15px 25px;
+    border-radius: 50px;
+}
+
+/* Checkbox */
+
+/* Base for label styling */
+[type="checkbox"]:not(:checked),
+[type="checkbox"]:checked {
+    position: absolute;
+    left: -9999px;
+}
+[type="checkbox"]:not(:checked) + label,
+[type="checkbox"]:checked + label {
+    position: relative;
+    padding-left: 32px;
+    cursor: pointer;
+    margin-bottom: 4px;
+    display: inline-block;
+    font-size: 16px;
+}
+/* checkbox aspect */
+[type="checkbox"]:not(:checked) + label:before,
+[type="checkbox"]:checked + label:before {
+    content: '';
+    position: absolute;
+    left: 0px; top: 0px;
+    width: 30px; height: 30px;
+    border: 2px solid #cccccc;
+    background: #ffffff;
+    border-radius: 4px;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,.1);
+}
+/* checked mark aspect */
+[type="checkbox"]:not(:checked) + label:after,
+[type="checkbox"]:checked + label:after {
+    content: '✔';
+    position: absolute;
+    top: 2px; left: 7px;
+    font-size: 26px;
+    line-height: 1.2;
+    color: #26a0da;
+    transition: all .2s;
+}
+/* checked mark aspect changes */
+[type="checkbox"]:not(:checked) + label:after {
+    opacity: 0;
+    transform: scale(0);
+}
+[type="checkbox"]:checked + label:after {
+    opacity: 1;
+    transform: scale(1);
+}
+/* disabled checkbox */
+[type="checkbox"]:disabled:not(:checked) + label:before,
+[type="checkbox"]:disabled:checked + label:before {
+    box-shadow: none;
+    border-color: #999999;
+    background-color: #dddddd;
+}
+[type="checkbox"]:disabled:checked + label:after {
+    color: #999999;
+}
+[type="checkbox"]:disabled + label {
+    color: #aaaaaa;
+}
+/* accessibility */
+/*[type="checkbox"]:checked:focus + label:before,
+[type="checkbox"]:not(:checked):focus + label:before {
+    border: 2px solid #0000ff;
+}*/
+/* hover style just for information */
+label:hover:before {
+    border: 2px solid #4778d9!important;
+    background: #ffffff
+}
+
+/* Media Query */
+
+@media (max-width: 600px){
+    .app-container{padding-top: 35px;}
+    .title{font-size: 28px;}
+
+    .add-new-task{margin-top: 30px;}
+
+    .add-new-task input[type=text]{width: 100%;}
+    .add-new-task{display: block;}
+
+    .task-list{margin-top: 20px; padding: 15px 5px;}
+
+    .task-list h3{font-size: 18px; margin-left: 10px; width: 70%;}
+
+    .action-buttons button{background-size: 16px; width: 32px; height: 32px;}
+
+    .task-list li{padding-right: 10px;}
+
+    .action-buttons .save-task,
+    .action-buttons .cancel-task{
+        display: block;
+        text-align: center;
+        width: 100%;
+        height: 28px;
+    }
+
+    .form-buttons{margin-top: -18px;}
+
+    .task-list form{width: 70%;}
+
+    [type="checkbox"]:not(:checked) + label:before,
+    [type="checkbox"]:checked + label:before {
+        width: 22px;
+        height: 22px;
+        top: 3px;
+    }
+
+    [type="checkbox"]:not(:checked) + label:after,
+    [type="checkbox"]:checked + label:after{top: 4px; left: 5px; font-size: 20px;}
+
+    [type="checkbox"]:not(:checked) + label, [type="checkbox"]:checked + label{padding-left: 25px; margin-bottom: 3px;}
+}
+
+@media (max-width: 400px){
+    .task-list h3{width: 63%;}
+
+    .task-list form{width: 60%;}
+}
